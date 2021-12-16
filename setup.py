@@ -8,7 +8,6 @@ setup(name='jacks',
       license='MIT',
       include_package_data=True,
       packages=find_packages(),
+      scripts=['bin/plot_jacks_heatmap.py', 'bin/JACKS.py'],
       install_requires=['scipy','numpy>=1.9.0','matplotlib'],
       zip_safe=False)
-      
-      

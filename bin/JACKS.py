@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import logging
 from jacks.jacks_io import runJACKSFromArgs 
 from jacks.infer import LOG
