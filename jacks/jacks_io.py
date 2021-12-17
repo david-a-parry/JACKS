@@ -238,7 +238,8 @@ def readControlGeneset(ctrl_genes, gene_spec):
     known_genes = set([gene_spec[x] for x in gene_spec])
     if os.path.isfile(ctrl_genes):
         f = io.open(ctrl_genes)
-        geneset = set([line.split()[0] for line in f if line.split()[0] in known_genes])
+        geneset = set([line.split()[0] for line in f if line.strip() != '' and
+                       line.split()[0] in known_genes])
         f.close()
         LOG.info('Read %d recognised control genes from %s' % (len(geneset), ctrl_genes))
     else: 
