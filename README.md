@@ -6,7 +6,7 @@ installs via pip. For example:
 
     pip3 install git+git://github.com/david-a-parry/JACKS.git
 
-Or in a using an environment.yml:
+Or in a conda environment using an environment.yml:
 
 ~~~
 dependencies:
