@@ -14,24 +14,20 @@ dependencies:
     - git+git+git://github.com/david-a-parry/JACKS.git
 ~~~
 
+If installed via pip, the executables `JACKS.py` and `plot_jacks_heatmap.py` will be in `$HOME/.local/bin` (on linux systems). You may need to add this location to your `$PATH`, after which these script will be accessible:
+
+~~~
+export PATH=$PATH:$HOME/.local/bin
+JACKS.py --help
+~~~
+
 All the code remains the work of the original authors.
-
-
-## Installation
-
-1.  At command prompt, `cd` to this directory
-2.  `pip install .`
-3.  Add jacks folder to system path e.g. `EXPORT PATH=$PATH:path_to_jacks/JACKS/jacks`
-
-### To check installation
-
-Run python, type 'import jacks' and check that no error is thrown.
 
 
 ## To run JACKS on full screen data
 
 ```bash
-python run_JACKS.py countfile replicatemapfile sgrnamappingfile --rep_hdr=replicate_hdr 
+JACKS.py countfile replicatemapfile sgrnamappingfile --rep_hdr=replicate_hdr 
     --sample_hdr=sample_hdr --common_ctrl_sample=ctrl_sample --sgrna_hdr=sgrna_hdr --gene_hdr=gene_hdr --outprefix outprefix --ctrl_genes=negative_controls
 ```
 
@@ -99,16 +95,16 @@ Guide 3	KRAS
   
 example:
 ```bash
-python run_JACKS.py example/example_count_data.tab example/example_repmap.tab example/example_count_data.tab --common_ctrl_sample=CTRL --gene_hdr=gene --outprefix=example_jacks/example_jacks --ctrl_genes=example/NEGv1.txt
+JACKS.py example/example_count_data.tab example/example_repmap.tab example/example_count_data.tab --common_ctrl_sample=CTRL --gene_hdr=gene --outprefix=example_jacks/example_jacks --ctrl_genes=example/NEGv1.txt
 ```
 ```bash
-python run_JACKS.py example/example_count_data.tab example/example_repmap_matched_ctrls.tab example/example_count_data.tab --ctrl_sample_hdr=Control --gene_hdr=gene --outprefix=example_jacks_ctrls/example_jacks --ctrl_genes=example/NEGv1.txt
+JACKS.py example/example_count_data.tab example/example_repmap_matched_ctrls.tab example/example_count_data.tab --ctrl_sample_hdr=Control --gene_hdr=gene --outprefix=example_jacks_ctrls/example_jacks --ctrl_genes=example/NEGv1.txt
 ```
 
 ## OR to run JACKS on new screen with previously used library
 
 ```bash
-python run_JACKS.py countfile replicatemapfile sgrnamappingfile --rep-hdr=replicate_hdr 
+JACKS.py countfile replicatemapfile sgrnamappingfile --rep-hdr=replicate_hdr 
     --sample_hdr=sample_hdr --common_ctrl_sample=ctrl_sample --sgrna-hdr=sgrna_hdr --gene-hdr=gene_hdr --reffile=grnaeffiacyfile --outprefix outprefix
 ```
 
@@ -120,7 +116,7 @@ all arguments as above except:
 example:   
 
 ```
-python run_JACKS.py example/example_count_data.tab example/example_repmap.tab example/example_count_data.tab --common_ctrl_sample=CTRL --gene_hdr=gene --outprefix=example_jacks_ref/example_jacks --ctrl_genes=example/NEGv1.txt --reffile=example/example_grna_JACKS_results.txt```
+JACKS.py example/example_count_data.tab example/example_repmap.tab example/example_count_data.tab --common_ctrl_sample=CTRL --gene_hdr=gene --outprefix=example_jacks_ref/example_jacks --ctrl_genes=example/NEGv1.txt --reffile=example/example_grna_JACKS_results.txt```
 ```     
      
 see `2018_paper_materials/README.txt` for further examples.
@@ -128,7 +124,7 @@ see `2018_paper_materials/README.txt` for further examples.
 ## Then, to plot heatmap outputs for a gene of interest
 
 ```bash
-python plot_heatmap.py picklefile gene (or "random" to randomly select one) outfile
+plot_heatmap.py picklefile gene (or "random" to randomly select one) outfile
 ```
 
 where:
@@ -142,6 +138,6 @@ where:
 example:
 
 ```bash
-python plot_heatmap.py example_jacks/example_jacks_JACKS_results_full.pickle KRAS example_jacks/KRAS.png
+plot_heatmap.py example_jacks/example_jacks_JACKS_results_full.pickle KRAS example_jacks/KRAS.png
 ```
  
